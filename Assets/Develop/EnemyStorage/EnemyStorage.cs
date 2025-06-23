@@ -19,7 +19,7 @@ public class EnemyStorage
 
     private void OnEnemyDied(Enemy enemy) => _enemies.Remove(enemy);
 
-    public void Deinizialize()
+    public void Deinitialize()
     {
         foreach (Enemy enemy in _enemies)
             enemy.Died -= OnEnemyDied;

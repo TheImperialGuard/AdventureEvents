@@ -42,6 +42,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDestroy()
     {
-        _enemyStorage.Deinizialize();
+        _enemyStorage.Deinitialize();
     }
 }
