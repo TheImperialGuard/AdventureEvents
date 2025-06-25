@@ -309,7 +309,6 @@ MonoBehaviour:
   _resourcePanel: {fileID: 38967538}
   _resourceViewPrefab: {fileID: 970118216172396437, guid: 78536b08791011445ac7f87e3c6523d5,
     type: 3}
-  _wallet: {fileID: 303634707}
 --- !u!114 &38967538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 303634709}
   - component: {fileID: 303634710}
-  - component: {fileID: 303634707}
   m_Layer: 0
   m_Name: WalletUser
   m_TagString: Untagged
@@ -578,24 +576,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &303634707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303634706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b5b3bd8ea0ea743b488818f02a1c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goldName: "\u0417\u043E\u043B\u043E\u0442\u043E"
-  _gemsName: "\u0410\u043B\u043C\u0430\u0437\u044B"
-  _energyName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
-  _goldSprite: {fileID: 21300000, guid: a8d53a8c27944dc4ca4d2c77c3f754dd, type: 3}
-  _gemsSprite: {fileID: 21300000, guid: faf2ae9de098e994eb18cc963db74d7e, type: 3}
-  _energySprite: {fileID: 21300000, guid: 469e012dd7d04454aab2dff5d2a17527, type: 3}
 --- !u!4 &303634709
 Transform:
   m_ObjectHideFlags: 0
@@ -623,6 +603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05313b4c792c35c47a10d12ce9394d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _walletView: {fileID: 38967537}
+  _alertMessageView: {fileID: 1611369112}
+  _goldName: "\u0417\u043E\u043B\u043E\u0442\u043E"
+  _gemsName: "\u0410\u043B\u043C\u0430\u0437\u044B"
+  _energyName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
+  _goldSprite: {fileID: 21300000, guid: a8d53a8c27944dc4ca4d2c77c3f754dd, type: 3}
+  _gemsSprite: {fileID: 21300000, guid: faf2ae9de098e994eb18cc963db74d7e, type: 3}
+  _energySprite: {fileID: 21300000, guid: 469e012dd7d04454aab2dff5d2a17527, type: 3}
 --- !u!1 &324020790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _messageText: {fileID: 2088571124}
   _messageTime: 2
-  _wallet: {fileID: 303634707}
 --- !u!1 &1709907027
 GameObject:
   m_ObjectHideFlags: 0
