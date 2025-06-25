@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Enemy enemy = Instantiate(_enemyPrefab);
-            _enemyStorage.SpawnEnemy(enemy, () => enemy.IsDead == true, () => enemy.LifeTime > 5f);
+            _enemyStorage.SpawnEnemy(enemy, () => enemy.IsDead == true || enemy.LifeTime > 5f);
         }
 
         if (Input.GetKeyDown(KeyCode.Y))
@@ -37,11 +37,8 @@ public class EnemySpawner : MonoBehaviour
             _enemyStorage.SpawnEnemy(enemy, () => enemy.LifeTime > 2f);
         }
 
-        Debug.Log(_enemyStorage.EnemyCount);
-    }
+        _enemyStorage.Update();
 
-    private void OnDestroy()
-    {
-        _enemyStorage.Deinitialize();
+        Debug.Log(_enemyStorage.EnemyCount);
     }
 }
