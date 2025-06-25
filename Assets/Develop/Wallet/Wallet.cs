@@ -2,30 +2,17 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wallet : MonoBehaviour
+public class Wallet
 {
     public event Action<string> WithdrawCancelled;
 
     private const string NotEnoughBalanceMessage = "Не хватает валюты: ";
 
-    [SerializeField] private string _goldName;
-    [SerializeField] private string _gemsName;
-    [SerializeField] private string _energyName;
-
-    [SerializeField] private Sprite _goldSprite;
-    [SerializeField] private Sprite _gemsSprite;
-    [SerializeField] private Sprite _energySprite;
-
     private Dictionary<CurrencyTypes, CurrencyUnit> _currencies;
 
-    private void Awake()
+    public Wallet(Dictionary<CurrencyTypes, CurrencyUnit> currencies)
     {
-        _currencies = new Dictionary<CurrencyTypes, CurrencyUnit>()
-        {
-            { CurrencyTypes.Gold, new CurrencyUnit(_goldName, _goldSprite) },
-            { CurrencyTypes.Energy, new CurrencyUnit(_energyName, _energySprite) },
-            { CurrencyTypes.Gem, new CurrencyUnit(_gemsName, _gemsSprite) },
-        };
+        _currencies = new Dictionary<CurrencyTypes, CurrencyUnit>(currencies);
     }
 
     public List<CurrencyUnit> GetWalletInfo()

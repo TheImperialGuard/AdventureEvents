@@ -8,11 +8,16 @@ public class AlertMessage : MonoBehaviour
 
     [SerializeField] private float _messageTime;
 
-    [SerializeField] private Wallet _wallet;
+    private Wallet _wallet;
 
     private Coroutine _alertProcess;
+    
+    public void Initialize(Wallet wallet)
+    {
+        _wallet = wallet;
+    }
 
-    private void Awake()
+    private void Start()
     {
         _wallet.WithdrawCancelled += OnWithdrawCancelled;
     }

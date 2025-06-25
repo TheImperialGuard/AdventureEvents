@@ -8,7 +8,7 @@ public class WalletView : MonoBehaviour
 
     [SerializeField] private CurrencyView _resourceViewPrefab;
 
-    [SerializeField] private Wallet _wallet;
+    private Wallet _wallet;
 
     private void Start()
     {
@@ -19,7 +19,9 @@ public class WalletView : MonoBehaviour
         foreach (CurrencyUnit unit in units)
         {
             CurrencyView currencyView = Instantiate(_resourceViewPrefab, _resourcePanel.transform);
-            currencyView.Inizialize(unit);
+            currencyView.Initialize(unit);
         }
     }
+
+    public void Initialize(Wallet wallet) => _wallet = wallet;
 }

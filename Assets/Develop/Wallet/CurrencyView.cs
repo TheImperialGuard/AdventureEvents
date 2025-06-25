@@ -11,7 +11,7 @@ public class CurrencyView : MonoBehaviour
 
     private CurrencyUnit _currencyUnit;
 
-    public void Inizialize(CurrencyUnit unit)
+    public void Initialize(CurrencyUnit unit)
     {
         _currencyUnit = unit;
 
