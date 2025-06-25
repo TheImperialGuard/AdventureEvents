@@ -69,11 +69,13 @@ public class TimerController : MonoBehaviour
     private void OnTimerEnded()
     {
         _inputField.interactable = true;
+        Debug.Log("Timer Ended");
     }
 
     private void OnTimerStarted()
     {
         _inputField.interactable = false;
+        Debug.Log("Timer Started");
     }
 
     private bool TryPlay(out float timeLimit) => float.TryParse(_inputField.text, out timeLimit);

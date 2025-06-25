@@ -66,9 +66,9 @@ public class Timer
 
         while (_elapsedTime < _timeLimit)
         {
-            yield return new WaitUntil(() => _isRunning == true);
-
-            _elapsedTime += Time.deltaTime;
+            
+            if (_isRunning == true)
+                _elapsedTime += Time.deltaTime;
 
             if (_elapsedTime > _timeLimit)
                 _elapsedTime = _timeLimit;
