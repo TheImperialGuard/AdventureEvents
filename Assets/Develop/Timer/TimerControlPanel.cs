@@ -1,22 +1,9 @@
-using System;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
 
-public class TimerController : MonoBehaviour
+public class TimerControlPanel : MonoBehaviour
 {
-    public event Action TimerStarted
-    {
-        add => _timer.TimerStarted += value;
-        remove => _timer.TimerStarted -= value;
-    }
-
-    public event Action TimerEnded
-    {
-        add => _timer.TimerEnded += value;
-        remove => _timer.TimerEnded -= value;
-    }
-
     [SerializeField] private TMP_InputField _inputField;
 
     private const string TimerFormat = "00.00";
@@ -26,11 +13,9 @@ public class TimerController : MonoBehaviour
 
     private Timer _timer;
 
-    public float TimeLimit => _timer.TimeLimit;
-
-    private void Awake()
+    public void Initialize(Timer timer)
     {
-        _timer = new Timer(this);
+        _timer = timer;
 
         _timer.TimerStarted += OnTimerStarted;
         _timer.TimerEnded += OnTimerEnded;
@@ -63,8 +48,6 @@ public class TimerController : MonoBehaviour
     public void Restart() => _timer.Restart();
 
     public void Stop() => _timer.Stop();
-
-    public bool InProcess(out float elapsedTime) => _timer.InProcess(out elapsedTime);
 
     private void OnTimerEnded()
     {

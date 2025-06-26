@@ -3,16 +3,18 @@ using UnityEngine.UI;
 
 public class SliderTimerView : MonoBehaviour
 {
-    [SerializeField] private TimerController _timer;
-
     [SerializeField] private RectTransform _view;
 
     [SerializeField] private Slider _sliderPrefab;
 
+    private Timer _timer;
+
     private Slider _slider;
 
-    private void Start()
+    public void Initialize(Timer timer)
     {
+        _timer = timer;
+
         _timer.TimerStarted += OnTimerStarted;
         _timer.TimerEnded += OnTimerEnded;
     }

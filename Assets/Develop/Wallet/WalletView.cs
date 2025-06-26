@@ -10,8 +10,10 @@ public class WalletView : MonoBehaviour
 
     private Wallet _wallet;
 
-    private void Start()
+    public void Initialize(Wallet wallet)
     {
+        _wallet = wallet;
+
         List<CurrencyUnit> units = new List<CurrencyUnit>();
 
         units = _wallet.GetWalletInfo();
@@ -21,7 +23,5 @@ public class WalletView : MonoBehaviour
             CurrencyView currencyView = Instantiate(_resourceViewPrefab, _resourcePanel.transform);
             currencyView.Initialize(unit);
         }
-    }
-
-    public void Initialize(Wallet wallet) => _wallet = wallet;
+    }    
 }

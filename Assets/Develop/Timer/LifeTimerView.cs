@@ -4,17 +4,22 @@ using UnityEngine.UI;
 
 public class LifeTimerView : MonoBehaviour
 {
-    [SerializeField] private TimerController _timer;
-
     [SerializeField] private LayoutGroup _view;
 
     [SerializeField] private GameObject _lifeIconPrefab;
+
+    private Timer _timer;
 
     private float _elapsedTime;
 
     private bool _running;
 
     private Queue<GameObject> _iconsList = new Queue<GameObject>();
+
+    public void Initialize(Timer timer)
+    {
+        _timer = timer;
+    }
 
     private void Update()
     {
